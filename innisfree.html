@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>innisfree</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- <div class="loading-war">
+    <img src="./imgs/bg2.jpg" alt="" class="loading-bg">
+    <img src="./imgs/logo1.png" alt="" class="loading-logo1">
+    <img src="./imgs/loading.png" alt="" class="loading-icon">
+  </div> -->
+  <div class="swiper-container" id="introduce">
+    <ul class="introduce-box-ul swiper-wrapper">
+      <li class="bg swiper-slide ">
+        <img src="./imgs/rotating.png" alt="" class="rotating">
+        <img src="./imgs/logo1.png" alt="" class="logo1 logo_1">
+        <img src="./imgs/zzy1.png" alt="" class="zzy1">
+        <img src="./imgs/index-text.png" alt="" class="index-text">
+        <i class="next"></i>
+      </li>
+      <li class="bg swiper-slide">
+        <img src="./imgs/rotating.png" alt="" class="rotating">
+        <img src="./imgs/logo1.png" alt="" class="logo1 logo_2">
+        <div class="main2">
+          <img src="./imgs/letter.png" alt="" class="envolop rotate">
+          <div class="text-wrapper">
+            <!-- <img src="./imgs/writing-paper.png" alt="" class="envolop2"> -->
+            <div class="text-con text-top">
+            </div>
+            <div class="text-con text-bottom">
+            </div>
+          </div>
+        </div>
+        <i class="next"></i>
+      </li>
+      <li class="bg4 swiper-slide">
+        <img src="./imgs/rotating.png" alt="" class="rotating">
+        <img src="./imgs/logo1.png" alt="" class="logo1 logo_3">
+        <img src="./imgs/questions-bg.jpg" alt="" class="questions-bg">
+        <div class="main3 main-content1">
+          <img src="./imgs/questions1.png" alt="">
+          <div class="btns">
+            <div class="yes">A.是</div>
+            <div class="no">B.否</div>
+          </div>
+        </div>
+      </li>
+      <li class="bg4 swiper-slide">
+        <img src="./imgs/rotating.png" alt="" class="rotating">
+        <img src="./imgs/logo1.png" alt="" class="logo1 logo_4">
+        <img src="./imgs/questions-bg.jpg" alt="" class="questions-bg">
+        <div class="main3 main-content2">
+          <img src="./imgs/questions2.png" alt="">
+          <div class="btns">
+            <div class="yes">A.是</div>
+            <div class="no">B.否</div>
+          </div>
+        </div>
+      </li>
+      <li class="bg4 swiper-slide">
+        <img src="./imgs/rotating.png" alt="" class="rotating">
+        <img src="./imgs/logo1.png" alt="" class="logo1 logo_5">
+        <img src="./imgs/questions-bg.jpg" alt="" class="questions-bg">
+        <div class="main3 main-content3">
+          <img src="./imgs/questions3.png" alt="">
+          <div class="btns">
+            <div class="yes">A.是</div>
+            <div class="no">B.否</div>
+          </div>
+        </div>
+      </li>
+      <li class="bg swiper-slide ">
+        <img src="./imgs/rotating.png" alt="" class="rotating">
+        <img src="./imgs/logo1.png" alt="" class="logo1 logo_6">
+        <img src="./imgs/zzy2.png" alt="" class="zzy2">
+        <img src="./imgs/text4.png" alt="" class="text4">
+        <i class="next"></i>
+      </li>
+      <li class="bg4 swiper-slide">
+        <img src="./imgs/rotating.png" alt="" class="rotating">
+        <div class="main4">
+          <img src="./imgs/bg3.jpg" alt="" class="bg3">
+          <img src="./imgs/logo3.png" alt="" class="logo3">
+          <img src="./imgs/text1.png" alt="" class="text1">
+          <!-- <img src="./imgs/text3.png" alt="" class="text3"> -->
+          <img src="./imgs/line.png" alt="" class="line">
+          <img src="./imgs/time.png" alt="" class="time">
+        </div>
+      </li>
+    </ul>
+    <audio id='audio' src='./mp3.mp3' loop autoplay preload="auto"></audio>
+    <div id='status' onclick='triggerBgMusic()'><img src="./imgs/play.png" alt=""></div>
+  </div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/swiper/swiper.min.js"></script>
+<script src="js/typeWriter.js"></script>
+<script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
+<script src="js/play.js"></script>
+<script>
+
+  // $('.loading-logo1').fadeIn(2000);
+  // setTimeout(function(){
+  //   $('.loading-icon').fadeIn(5000)
+  // },800);
+  // setTimeout(function(){
+  //     $('.loading-war').addClass('loading-war-hide');
+  // },2500);
+  // setTimeout(function(){
+  //     $('.loading-war').hide();
+  // },2600);
+
+  var timeTypeText1,timeTypeText2;
+  var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        onSlideChangeStart: function(mySwiper) {
+          var liIndex = mySwiper.activeIndex
+          if(liIndex == 0){
+            $('.logo_1, .zzy1, .index-text').hide(0);
+          }
+          if(liIndex == 1) {
+            $('.main2 .envolop').removeClass('rotated').addClass('rotate')
+            $('.text-wrapper').hide(0)
+            $(".logo_2, .main2 .text-top, .main2 .text-bottom").hide(0)
+            clearTimeout(timeTypeText1)
+            clearTimeout(timeTypeText2)
+          }
+          if(liIndex == 2) {
+            $('.logo_3, .questions-bg, .main-content1 img, .main-content1 .btns').hide(0)
+          }
+          if(liIndex == 3) {
+            $('.logo_4, .questions-bg, .main-content2 img, .main-content2 .btns').hide(0)
+          }
+          if(liIndex == 4) {
+            $('.logo_5, .questions-bg, .main-content3 img, .main-content3 .btns').hide(0)
+          }
+          if(liIndex == 5){
+            $('.logo_6, .zzy2, .text4, .signature').hide(0);
+          }
+          if(liIndex == 6){
+            $('.logo3, .text1, .line, .time ').hide(0);
+          }
+        },
+        onSlideChangeEnd: function(mySwiper){
+          var liIndex = mySwiper.activeIndex;
+          if(liIndex == 0){
+            $('.logo_1').fadeIn(2000);
+            setTimeout(function(){
+                $('.zzy1').fadeIn(5000);
+            },1000)
+            setTimeout(function(){
+                $('.index-text').fadeIn(500);
+            },2000)
+            swiper.unlockSwipeToNext();
+          }
+          if(liIndex == 1) {
+              $('.logo_2').fadeIn(2000);
+              setTimeout(function(){
+                $('.main2 .envolop').removeClass('rotate').addClass('rotated');
+              },800)
+              setTimeout(function(){
+                $('.text-wrapper').fadeIn(500);
+              },900)
+              timeTypeText1 = setTimeout(function(){
+                $(".main2 .text-top").html(
+                  `亲爱的<br/>`+
+                  `收到这封信是不是有一点小惊讶?`
+                ).show().typewriter(150);
+              },2500)
+              timeTypeText2 = setTimeout(function(){
+                $(".main2 .text-bottom").html(
+                  `其实，<br/>`+
+                  `我们已经观察你很久了，<br/>`+
+                  `发现你身边有一些危害在悄悄潜伏着<br/>`+
+                  `... ... `
+                ).show().typewriter(150);
+              },5600)
+              swiper.unlockSwipeToNext();
+          }
+          if(liIndex == 2){
+            mySwiper.lockSwipeToNext();
+            $('.logo_3').fadeIn(2000);
+            setTimeout(function(){
+              $('.questions-bg').fadeIn(500)
+            },1000)
+            setTimeout(function(){
+              $('.main-content1 img').fadeIn(2000);
+            },1500)
+            setTimeout(function(){
+              $('.main-content1 .btns').fadeIn(2000);
+            },2500)
+          }
+          if(liIndex == 3){
+            mySwiper.lockSwipeToNext();
+            $('.logo_4').fadeIn(500);
+            setTimeout(function(){
+              $('.questions-bg').fadeIn(500)
+            },1000)
+            setTimeout(function(){
+              $('.main-content2 img').fadeIn(2000);
+            },1500)
+            setTimeout(function(){
+              $('.main-content2 .btns').fadeIn(2000);
+            },2500)
+          }
+          if(liIndex == 4){
+            mySwiper.lockSwipeToNext();
+            $('.logo_5').fadeIn(2000);
+            setTimeout(function(){
+              $('.questions-bg').fadeIn(500)
+            },1000)
+            setTimeout(function(){
+              $('.main-content3 img').fadeIn(2000);
+            },1500)
+            setTimeout(function(){
+              $('.main-content3 .btns').fadeIn(2000);
+            },2500)
+          }
+          if(liIndex == 5){
+            $('.logo_6').fadeIn(2000);
+            setTimeout(function(){
+                $('.zzy2').fadeIn(2000);
+            },1000)
+            setTimeout(function(){
+                $('.text4').fadeIn(500);
+            },2500)
+            setTimeout(function(){
+                $('.signature').fadeIn(2000);
+            },3500)
+          }
+          if(liIndex == 6){
+            $('.logo3').fadeIn(2000);
+            setTimeout(function(){
+                $('.text1').fadeIn(2000);
+            },1500)
+            setTimeout(function(){
+                $('.line').fadeIn(500);
+            },2500)
+            setTimeout(function(){
+                $('.time').fadeIn(5000);
+            },3500)
+          }
+        }
+      });
+</script>
+<script src="js/index.js"></script>
+</html>

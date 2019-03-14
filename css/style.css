@@ -1,0 +1,389 @@
+body,
+html,
+ul,
+li,
+p,
+span,
+i {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "微软雅黑";
+  font-size: 0;
+}
+img {
+  width: 100%;
+}
+.swiper-container {
+  height: 100%;
+}
+ul {
+  position: relative;
+  height: 100%;
+  font-size: 0;
+}
+li {
+  list-style-type: none;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 15px;
+}
+.swiper-slide {
+  height: 100% !important;
+}
+.bg {
+  background: url(../imgs/bg.jpg) no-repeat center;
+  background-size: cover;
+}
+.bg2 {
+  background: url(../imgs/bg2.jpg) no-repeat center;
+  background-size: cover;
+}
+.bg4 {
+  background: url(../imgs/bg4.jpg) no-repeat center;
+  background-size: cover;
+}
+.rotating {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: rotating 8s linear infinite;
+  opacity: .9;
+}
+@-webkit-keyframes rotating {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+  }
+  75% {
+    -webkit-transform: translate(-50%, -50%) rotate(270deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.letter-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.logo1 {
+  display: none;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-animation: firstLogo 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes firstLogo {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100px;
+  }
+}
+.zzy1,
+.zzy2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+.zzy1 {
+  -webkit-animation: zzy1 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes zzy1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.index-text {
+  position: absolute;
+  left: 10%;
+  display: none;
+  width: 50%;
+  -webkit-animation: indexText 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes indexText {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.text4 {
+  position: absolute;
+  left: 10%;
+  display: none;
+  width: 48%;
+  -webkit-animation: titleText4 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes titleText4 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.signature {
+  position: absolute;
+  bottom: 18%;
+  right: 15%;
+  display: none;
+  width: 28%;
+}
+.text-logo {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  width: 20%;
+}
+.main2 .envolop {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.main2 .envolop.rotate {
+  transform: translate(-50%, -50%) rotate(0);
+  -webkit-transform: translate(-50%, -50%) rotate(0);
+  transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+}
+.main2 .envolop.rotated {
+  transform: translate(-50%, -50%) rotate(-30deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-30deg);
+  transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+}
+.main2 .text-wrapper {
+  line-height: 22px;
+  width: 90%;
+  height: 50%;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../imgs/writing-paper.png) center no-repeat;
+  background-size: 100% 100%;
+  -webkit-animation: letter 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes letter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main2 .text-wrapper .text-con {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  color: #8b3931;
+  font-size: 13px;
+}
+.main2 .text-wrapper .text-top {
+  display: none;
+  top: 15%;
+}
+.main2 .text-wrapper .text-bottom {
+  display: none;
+  top: 55%;
+}
+.questions-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  opacity: 0.7;
+}
+.main3 {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 20%;
+}
+.main3 img {
+  display: none;
+}
+.main3 .btns {
+  display: none;
+  margin: 20px 30px 0 30px;
+  overflow: hidden;
+}
+.main3 .btns div {
+  color: #8b3931;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.main3 .btns div.yes {
+  float: left;
+}
+.main3 .btns div.no {
+  float: right;
+}
+.main3 .btns div.active {
+  background-color: #f6e4e2;
+  border-radius: 5px;
+}
+.main4 {
+  width: 100%;
+}
+.main4 .bg3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  width: 72%;
+}
+.main4 .logo3 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  width: 42%;
+  -webkit-animation: lastLogo 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes lastLogo {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 42%;
+  }
+}
+.main4 .text1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 70%;
+  -webkit-animation: titleText1 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes titleText1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.main4 .line {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+.main4 .time {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+  display: none;
+  width: 60%;
+  -webkit-animation: proRotate 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes proRotate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#status {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+/* 下一页箭头 */
+.next {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -22px;
+  width: 50px;
+  height: 36px;
+  background: url(../imgs/next.png) no-repeat;
+  background-size: cover;
+  animation: zoom 0.8s infinite;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
